@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Result</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 25px;
+      background-color: #5b52b2;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 40px;
+      width: 100%;
+      max-width: 370px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .card img {
+      width: 80px;
+      margin-bottom:-10px;
+    }
+
+    .card h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .input-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #000;
+      text-align: left;
+      margin-bottom: 19px;
+      height:10px;
+      width:49%;
+    }
+
+    .input-label span {
+      color: red;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 88%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      background-color: #f8f8f8;
+      border-radius: 1px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #2c9c74;
+      color: white;
+      font-size: 15px;
+      border: none;
+      padding: 10px 0;
+      width: 40%;
+      border-radius: 1px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #248b65;
+    }
+  </style>
+</head>
+<body>
+
+  <p style="font-size:12px; color:white; margin-top:-10px; margin-left:-4px;">SEMESTER-IV, 2024</p>
+  <p style="font-size:12px; color:white; margin-top:-25px; text-align:right">
+    <a style="text-decoration:none; color:white;" href="https://www.ugbexam.net/">Back to Home</a>
+  </p>
+
+  <div class="card">
+    <img src="logo.png" alt="logo" onerror="this.style.display='none'">
+    <h2>Result</h2>
+    <p>Please enter your Roll Number</p><br>
+
+    <div class="input-label"><span>*</span> Roll Number :</div>
+    <input type="text" id="rollInput" placeholder="Roll Number..."><br><br>
+    <button onclick="downloadPDF()">Submit</button>
+  </div>
+
+  <script>
+  function downloadPDF() {
+  const roll = document.getElementById('rollInput').value.trim().toUpperCase();
+  
+  const rollToPDF = {
+  "2523EDCMJ0248": "https://drive.google.com/file/d/1-wG2AIqWef1TQsgjqORtRNXzlw17pG8T/view?usp=drivesdk",
+  "2523EDCMJ0423": "https://drive.google.com/uc?export=download&id=1MRYdKYsMiyV81DJRpu6Gg7bq6CwVAnw2",
+  "2523ENGMJ0027": "https://drive.google.com/uc?export=download&id=1HJ2l8gLRW7sOyTWr_p32zOesivZaf0AB",
+  "2523ENGMJ0028": "https://drive.google.com/uc?export=download&id=1uqxz2UPKzBGoxkZBF8KcWq4IjPbSuyqF",
+  "2523ENGMJ0029": "https://drive.google.com/uc?export=download&id=1L4j7KHKxQ5B5E7qIDPbDgCknR6epNUe3"
+  };
+  
+  if (rollToPDF[roll]) {
+  window.location.href = rollToPDF[roll];
+  } else {
+  alert("Invalid roll number or result not found.");
+  }
+  }
+  </script>
+</body>
+</html>
