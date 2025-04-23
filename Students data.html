@@ -139,16 +139,15 @@ function downloadPDF() {
   const roll = document.getElementById('rollInput').value.trim().toUpperCase();
 
   const rollToPDF = {
-    "2523ENGMJ0025": "auto.pdf",
-    "2523ENGMJ0026": "https://raw.githubusercontent.com/sujit-gh/result-pdfs/main/results/2523ENGMJ0026.pdf",
-    "2523ENGMJ0027": "https://raw.githubusercontent.com/sujit-gh/result-pdfs/main/results/2523ENGMJ0027.pdf"
+    "2523ENGMJ0025": "https://cdn.jsdelivr.net/gh/sbcec420/ugbresult4@main/auto.pdf",
+    // অন্য রোল নম্বরও চাইলে এখানে যোগ করো
   };
 
   if (rollToPDF[roll]) {
-    window.open(rollToPDF[roll], '_blank'); // নতুন ট্যাবে ওপেন করবে
-    // window.location.href = rollToPDF[roll]; // এটা দিলে সরাসরি ডাউনলোড করবে
+    window.location.href = rollToPDF[roll];
   } else {
     alert("Invalid roll number or result not found.");
   }
 }
+</script>
 </script>
